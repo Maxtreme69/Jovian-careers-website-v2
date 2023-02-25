@@ -2,55 +2,38 @@
 <html>
   <head>
     <title>Jovian Careers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<!--     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+<style>
+  #banner {
+    height: 360px;
+    width: 100%;
+    object-fit: cover;
+  }
+</style>
   </head>
   <body>
-    <div id="container">
-      <h1>Jovian Careers</h1>
-    <img id="banner" src="http://jovian-careers-website.aakashns.repl.co/static/banner.jpeg" height="320" >
-    <h2>About Jovian</h2>
-    <p class="bodytext">
+    <div class="container">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+    <img class="img-fluid" id="banner" src="http://jovian-careers-website.aakashns.repl.co/static/banner.jpeg" height="320" >
+    <h2 class="text-center mt-2 mb-4">About Jovian</h2>
+    <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta cum laboriosam quisquam. Sint labore cupiditate tempora. Iste, magnam aliquam adipisci, accusamus, reprehenderit esse officia quaerat dolorem autem voluptate enim ullam!
     </p>
     <h2>Open Positions</h2>
-    <p class="bodytext">TODO - Show the jobs here</p>
-      <div style="text-align:center;">
-          <button>Contact Us</button>
-        <p>Copyright 2022, Jovian</p>
+    <div>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}
+    </div>
+      <div class="text-center">
+          <button class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">Copyright 2022, Jovian</p>
       </div>
     </div>
   </body>
 </html>
 
-<style>
-  h1 {
-    font-size: 80px;
-    font-family: Roboto;
-    font-weight: normal;
-    color: rgb(50,50,50);
-    text-align: center;
-  }
-
-  #banner {
-    width: 100%;
-    height: 360px; 
-    object-fit: cover;
-  }
-
-  h2 {
-    font-family: Roboto;
-    font-size: 32px;
-    color: rgb(100, 100, 100);
-    text-align: center;
-    font-weight: normal;
-  }
-
-  #container {
-    max-width: 720px;
-    margin: 0 auto 0 auto; 
-  }
-
-  .bodytext {
-    font-family: Roboto;
-    color: rgb(00, 00, 00);
-  }
-</style>
